@@ -118,7 +118,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=1920') no-repeat center center/cover;
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('back.jfif') no-repeat center center/cover;
             text-align: center;
             border-bottom: 2px solid rgba(209, 180, 106, 0.1);
         }
@@ -199,6 +199,15 @@
         .quiz-option-btn:hover i {
             transform: scale(1.1);
         }
+
+        .main-espresso{
+            color: var(--main-espresso);
+        }
+
+        .primary-gold{
+            color: var(--primary-gold)
+        }
+
         .progress-bar-luxury {
             height: 4px;
             background: var(--gold-gradient);
@@ -463,18 +472,18 @@
     </section>
 
     <!-- Perfume Discovery Quiz Section -->
-    <section id="quiz-section" style="background-color: rgba(0,0,0,0.15);">
+    <section id="quiz-section" style="background-color: white;">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title">مستشار العطور الافتراضي</h2>
+                <h2 class="section-title primary-gold">مستشار العطور الافتراضي</h2>
                 <div class="section-divider"></div>
-                <p class="lead text-white-50">أجب عن 3 أسئلة سريعة لنكتشف معاً النوتة العطرية التي تمثل هويتك بدقة</p>
+                <p class="lead main-espresso">أجب عن 3 أسئلة سريعة لنكتشف معاً النوتة العطرية التي تمثل هويتك بدقة</p>
             </div>
 
             <div class="row justify-content-center">
                 <div class="col-lg-8" data-aos="fade-up">
                     <div class="quiz-container">
-                        <div class="d-flex justify-content-between mb-3 text-light-gold small">
+                        <div class="d-flex justify-content-between mb-3 text-light-gold main-espresso small">
                             <span id="quiz-step-indicator">السؤال 1 من 3</span>
                             <span id="quiz-percent-indicator">33%</span>
                         </div>
@@ -483,7 +492,7 @@
                         </div>
 
                         <!-- Question Step 1 -->
-                        <div class="quiz-step active" id="step-1">
+                        <div class="quiz-step active main-espresso" id="step-1">
                             <h4 class="text-center text-light-gold mb-4 fs-3">1. ما الأجواء العامة التي تفضلها في عطورك دائماً؟</h4>
                             <div class="row g-3">
                                 <div class="col-md-6">
@@ -502,7 +511,7 @@
                         </div>
 
                         <!-- Question Step 2 -->
-                        <div class="quiz-step" id="step-2">
+                        <div class="quiz-step main-espresso" id="step-2">
                             <h4 class="text-center text-light-gold mb-4 fs-3">2. أي الروائح الأساسية تنجذب إليها الحواس مباشرة؟</h4>
                             <div class="row g-3">
                                 <div class="col-md-4">
@@ -527,7 +536,7 @@
                         </div>
 
                         <!-- Question Step 3 -->
-                        <div class="quiz-step" id="step-3">
+                        <div class="quiz-step main-espresso" id="step-3">
                             <h4 class="text-center text-light-gold mb-4 fs-3">3. ما هي المناسبة الأساسية التي سترتدي فيها هذا العطر؟</h4>
                             <div class="row g-3">
                                 <div class="col-md-6">
@@ -579,7 +588,7 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="product-card">
                         <div class="product-img-frame">
-                            <img src="1.png" alt="سحر الشرق الأصيل">
+                            <img src="1.png" alt="Black Sea Lorenzo Pazzaglia">
                         </div>
                         <div class="p-4 text-center d-flex flex-column flex-grow-1 justify-content-between">
                             <div>
@@ -588,7 +597,7 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-auto">
                                 <span class="fs-4 fw-bold text-white">1000 ج.م</span>
-                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('سحر الشرق الأصيل')">شراء الآن</button>
+                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('Black Sea Lorenzo Pazzaglia')">شراء الآن</button>
                             </div>
                         </div>
                     </div>
@@ -597,7 +606,7 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="product-card">
                         <div class="product-img-frame">
-                            <img src="2.png" alt="الغموض المخملي">
+                            <img src="2.png" alt="Mandarino De Amalfi">
                         </div>
                         <div class="p-4 text-center d-flex flex-column flex-grow-1 justify-content-between">
                             <div>
@@ -606,7 +615,7 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-auto">
                                 <span class="fs-4 fw-bold text-white">1200  ج.م</span>
-                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('الغموض المخملي')">شراء الآن</button>
+                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('Mandarino De Amalfi')">شراء الآن</button>
                             </div>
                         </div>
                     </div>
@@ -615,7 +624,7 @@
                 <div class="col-lg-4 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="300">
                     <div class="product-card">
                         <div class="product-img-frame">
-                            <img src="3.png" alt="النسمة الملكية">
+                            <img src="3.png" alt="Madawi Arabian White Oud">
                         </div>
                         <div class="p-4 text-center d-flex flex-column flex-grow-1 justify-content-between">
                             <div>
@@ -624,7 +633,7 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-auto">
                                 <span class="fs-4 fw-bold text-white">1100 ج.م</span>
-                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('النسمة الملكية')">شراء الآن</button>
+                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('Madawi Arabian White Oud')">شراء الآن</button>
                             </div>
                         </div>
                     </div>
@@ -633,7 +642,7 @@
                 <div class="col-lg-4 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="300">
                     <div class="product-card">
                         <div class="product-img-frame">
-                            <img src="4.png" alt="النسمة الملكية">
+                            <img src="4.png" alt="Tilla Marc-Antoine Barrios">
                         </div>
                         <div class="p-4 text-center d-flex flex-column flex-grow-1 justify-content-between">
                             <div>
@@ -642,7 +651,7 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-auto">
                                 <span class="fs-4 fw-bold text-white">1400 ج.م</span>
-                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('النسمة الملكية')">شراء الآن</button>
+                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('Tilla Marc-Antoine Barrios')">شراء الآن</button>
                             </div>
                         </div>
                     </div>
@@ -651,7 +660,7 @@
                 <div class="col-lg-4 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="300">
                     <div class="product-card">
                         <div class="product-img-frame">
-                            <img src="5.png" alt="النسمة الملكية">
+                            <img src="5.png" alt="Taraf Arabian Oud">
                         </div>
                         <div class="p-4 text-center d-flex flex-column flex-grow-1 justify-content-between">
                             <div>
@@ -660,7 +669,7 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-auto">
                                 <span class="fs-4 fw-bold text-white">1150 ج.م</span>
-                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('النسمة الملكية')">شراء الآن</button>
+                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('Taraf Arabian Oud')">شراء الآن</button>
                             </div>
                         </div>
                     </div>
@@ -669,7 +678,7 @@
                 <div class="col-lg-4 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="300">
                     <div class="product-card">
                         <div class="product-img-frame">
-                            <img src="6.png" alt="النسمة الملكية">
+                            <img src="6.png" alt="Torino21 Xerjoff">
                         </div>
                         <div class="p-4 text-center d-flex flex-column flex-grow-1 justify-content-between">
                             <div>
@@ -678,7 +687,7 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-auto">
                                 <span class="fs-4 fw-bold text-white">1500 ج.م</span>
-                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('النسمة الملكية')">شراء الآن</button>
+                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('Torino21 Xerjoff')">شراء الآن</button>
                             </div>
                         </div>
                     </div>
@@ -688,26 +697,26 @@
     </section>
 
     <!-- About Us Section -->
-    <section id="about" style="background-color: rgba(0,0,0,0.25); border-top: 1px solid rgba(209, 180, 106, 0.05); border-bottom: 1px solid rgba(209, 180, 106, 0.05);">
+    <section id="about" style="background-color: white; border-top: 1px solid rgba(209, 180, 106, 0.05); border-bottom: 1px solid rgba(209, 180, 106, 0.05);">
         <div class="container">
             <div class="row g-4 align-items-stretch">
                 <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-right">
-                    <h2 class="section-title text-start">فلسفة التميز لدينا</h2>
+                    <h2 class="section-title text-start primary-gold">فلسفة التميز لدينا</h2>
                     <div class="section-divider ms-auto me-0"></div>
-                    <p class="lead text-light-gold mb-4">نحن لا نبيع زجاجات عطر، بل نخلد لحظات وذكريات لا تنسى.</p>
-                    <p class="text-white-50 lh-lg">بدأت مسيرة آل درويش من الشغف بجمع أندر المكونات الطبيعية من غابات العود العتيقة وحقول الورد الطائفي والفرنسي النقي، لنصنع لكل عميل هوية عطرية تعبر عن حضوره الفريد والمميز في كل مكان.</p>
+                    <p class="lead main-espresso mb-4">نحن لا نبيع زجاجات عطر، بل نخلد لحظات وذكريات لا تنسى.</p>
+                    <p class="lh-lg" style="color:var(--warm-chestnut);">بدأت مسيرة آل درويش من الشغف بجمع أندر المكونات الطبيعية من غابات العود العتيقة وحقول الورد الطائفي والفرنسي النقي، لنصنع لكل عميل هوية عطرية تعبر عن حضوره الفريد والمميز في كل مكان.</p>
                 </div>
                 <div class="col-lg-7" data-aos="fade-left">
                     <div class="row g-4 h-100">
                         <div class="col-sm-6">
-                            <div class="mosaic-card">
+                            <div class="mosaic-card" style="background-color: var(--main-espresso);">
                                 <div class="icon-badge"><i class="bi bi-award"></i></div>
                                 <h4 class="text-light-gold mb-2">نقاوة مطلقة</h4>
                                 <p class="text-white-50 small mb-0">زيوت عطرية أصلية مستخلصة طبيعياً بدون إضافات كيميائية ضارة.</p>
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <div class="mosaic-card">
+                            <div class="mosaic-card" style="background-color: var(--main-espresso);">
                                 <div class="icon-badge"><i class="bi bi-shield-check"></i></div>
                                 <h4 class="text-light-gold mb-2">ضمان الثبات</h4>
                                 <p class="text-white-50 small mb-0">تركيزات عالية (Eau de Parfum) تضمن لك بقاء العطر طوال اليوم.</p>
@@ -748,9 +757,12 @@
                                     <label class="form-label text-light-gold fw-semibold">العطر المختار</label>
                                     <select id="form-perfume-select" class="form-select" required>
                                         <option value="" selected disabled>اختر العطر الفاخر...</option>
-                                        <option value="سحر الشرق الأصيل">سحر الشرق الأصيل</option>
-                                        <option value="الغموض المخملي">الغموض المخملي</option>
-                                        <option value="النسمة الملكية">النسمة الملكية</option>
+                                        <option value="Black Sea Lorenzo Pazzaglia">Black Sea Lorenzo Pazzaglia</option>
+                                        <option value="Mandarino De Amalfi">Mandarino De Amalfi</option>
+                                        <option value="Madawi Arabian White Oud">Madawi Arabian White Oud</option>
+                                        <option value="Tilla Marc-Antoine Barrios">Tilla Marc-Antoine Barrios</option>
+                                        <option value="Taraf Arabian Oud">Taraf Arabian Oud</option>
+                                        <option value="Torino21 Xerjoff">Torino21 Xerjoff</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6 mb-4">
@@ -874,14 +886,14 @@
             let finalDesc = '';
 
             if (quizSelections.vibe === 'oriental' || quizSelections.base === 'oud') {
-                finalPerfume = 'سحر الشرق الأصيل';
-                finalDesc = 'بناءً على تفضيلك للفخامة والروائح الشرقية العميقة، فإن هذا المزيج من العود النادر والمسك يمنحك حضوراً ملكياً مهيباً يدوم لفترات طويلة جداً.';
+                finalPerfume = 'Madawi Arabian White Oud';
+                finalDesc = 'انتعاش يومي حيوي مستخلص من زنابق الوادي وجوز الهند مع المسك والامبرغريس';
             } else if (quizSelections.occ === 'formal' || quizSelections.base === 'musk') {
-                finalPerfume = 'الغموض المخملي';
-                finalDesc = 'اختيارك يميل نحو التميز الغامض والهادئ in آن واحد. نوتات خشب الأرز واللافندر البارد ستمنحك هالة جذابة ومثالية للمناسبات واللقاءات الرسمية.';
+                finalPerfume = 'Taraf Arabian Oud';
+                finalDesc = 'مزيج الورد البلغاري و إكليل الجبل';
             } else {
-                finalPerfume = 'النسمة الملكية';
-                finalDesc = 'أنت تعشق الحيوية والانتعاش الدائم! مستخلص أزهار الحمضيات والبرغموت هو الخيار الأجمل ليعطيك طاقة إيجابية ونسمات خفيفة ساحرة تناسب يومك بالكامل.';
+                finalPerfume = 'Torino21 Xerjoff';
+                finalDesc = 'إنتعاش من الكمشيش الأسود المخلوط مع الخزامي وإكليل الجبل مضاف إليه عبق الياسمين';
             }
 
             document.getElementById('recommended-title').innerText = finalPerfume;
