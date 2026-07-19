@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عطور آل درويش | الفخامة الشرقية</title>
+    <!-- Bootstrap 5.3.2 (RTL) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- AOS Animation Engine -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts: El Messiri (Elegant Serif) & Cairo (Modern Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=El+Messiri:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Color Palette Root Variables */
+        :root {
+            --primary-gold: #D1B46A;
+            --main-espresso: #2B1204;
+            --warm-chestnut: #542E13;
+            --text-white: #FFFFFF;
+            --text-light-gold: #EAD8A8;
+            --gold-gradient: linear-gradient(135deg, #EAD8A8 0%, #D1B46A 50%, #8C531F 100%);
+        }
+
+        /* Global Structural Refinement */
+        body {
+            background-color: var(--main-espresso);
+            color: var(--text-white);
+            font-family: 'Cairo', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .navbar-brand {
+            font-family: 'El Messiri', serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--main-espresso);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-gold);
+            border-radius: 4px;
+        }
+
+        /* Premium Interactive Buttons */
+        .btn-luxury {
+            background: var(--gold-gradient);
+            color: var(--main-espresso);
+            font-weight: 700;
+            border: none;
+            padding: 14px 40px;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(209, 180, 106, 0.3);
+            transition: all 0.4s ease;
+        }
+        .btn-luxury:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(209, 180, 106, 0.5);
+            color: var(--main-espresso);
+        }
+
+        /* Fixed Centered Sticky Navbar */
+        .navbar {
+            background-color: rgba(43, 18, 4, 0.85);
+            border-bottom: 1px solid rgba(209, 180, 106, 0.15);
+            backdrop-filter: blur(15px);
+            padding: 15px 0;
+            transition: all 0.4s ease;
+        }
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-gold) !important;
+        }
+        .nav-link {
+            color: var(--text-light-gold) !important;
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin: 0 15px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--text-white) !important;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            right: 0;
+            background: var(--gold-gradient);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Polished Hero Section */
+        .hero-section {
+            position: relative;
+            height: 95vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=1920') no-repeat center center/cover;
+            text-align: center;
+            border-bottom: 2px solid rgba(209, 180, 106, 0.1);
+        }
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Section Layouts */
+        section {
+            padding: 120px 0;
+        }
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--text-light-gold);
+            margin-bottom: 15px;
+        }
+        .section-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--gold-gradient);
+            margin: 0 auto 25px auto;
+            border-radius: 2px;
+        }
+
+        /* Dynamic Quiz Components Styling */
+        .quiz-container {
+            background-color: rgba(84, 46, 19, 0.25);
+            border: 1px solid rgba(209, 180, 106, 0.15);
+            border-radius: 24px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        .quiz-step {
+            display: none;
+        }
+        .quiz-step.active {
+            display: block;
+            animation: fadeInQuiz 0.5s ease forward;
+        }
+        @keyframes fadeInQuiz {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .quiz-option-btn {
+            background-color: var(--warm-chestnut);
+            border: 1px solid rgba(209, 180, 106, 0.2);
+            color: var(--text-white);
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .quiz-option-btn i {
+            font-size: 2.2rem;
+            color: var(--primary-gold);
+            margin-bottom: 12px;
+            transition: transform 0.3s ease;
+        }
+        .quiz-option-btn:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            background-color: rgba(84, 46, 19, 0.6);
+        }
+        .quiz-option-btn:hover i {
+            transform: scale(1.1);
+        }
+        .progress-bar-luxury {
+            height: 4px;
+            background: var(--gold-gradient);
+            transition: width 0.4s ease;
+        }
+        .result-box {
+            background-color: var(--warm-chestnut);
+            border: 2px dashed var(--primary-gold);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        /* Fluid Product Cards Style */
+        .product-card {
+            background-color: var(--warm-chestnut);
+            border: 1px solid rgba(209, 180, 106, 0.15);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .product-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--primary-gold);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(209, 180, 106, 0.15);
+        }
+        .product-img-frame {
+            height: 300px;
+            background: linear-gradient(180deg, rgba(43,18,4,0.1) 0%, rgba(0,0,0,0.4) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .product-img-frame i {
+            font-size: 5.5rem;
+            color: var(--primary-gold);
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+            transition: transform 0.6s ease;
+        }
+        .product-card:hover .product-img-frame i {
+            transform: scale(1.15) rotate(8deg);
+        }
+
+        /* About Us Geometric Mosaic Concept */
+        .mosaic-card {
+            background-color: rgba(84, 46, 19, 0.4);
+            border: 1px solid rgba(209, 180, 106, 0.1);
+            padding: 40px;
+            border-radius: 24px;
+            height: 100%;
+            transition: background-color 0.3s ease;
+        }
+        .mosaic-card:hover {
+            background-color: rgba(84, 46, 19, 0.7);
+        }
+        .icon-badge {
+            width: 65px;
+            height: 65px;
+            background: var(--gold-gradient);
+            color: var(--main-espresso);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+        }
+
+        /* Premium Form Controls & Custom Select Layouts */
+        .form-control, .form-select {
+            background-color: rgba(84, 46, 19, 0.3);
+            border: 1px solid rgba(209, 180, 106, 0.25);
+            color: var(--text-white);
+            padding: 14px 20px;
+            border-radius: 12px;
+            font-size: 1rem;
+        }
+        .form-control:focus, .form-select:focus {
+            background-color: rgba(43, 18, 4, 0.9);
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 10px rgba(209, 180, 106, 0.25);
+            color: var(--text-white);
+        }
+        .form-control::placeholder {
+            color: rgba(234, 216, 168, 0.4);
+        }
+        .form-select option {
+            background-color: var(--main-espresso);
+            color: var(--text-white);
+        }
+
+        /* Highlight visual frame tracker */
+        .highlight-pulse {
+            animation: formPulse 1.2s ease-in-out 2;
+        }
+        @keyframes formPulse {
+            0% { border-color: rgba(209, 180, 106, 0.25); box-shadow: none; }
+            50% { border-color: var(--primary-gold); box-shadow: 0 0 20px rgba(209, 180, 106, 0.4); }
+            100% { border-color: rgba(209, 180, 106, 0.25); box-shadow: none; }
+        }
+
+        /* Contact Visual Map Deck */
+        .contact-detail-card {
+            background-color: var(--warm-chestnut);
+            border: 1px solid rgba(209, 180, 106, 0.15);
+            border-radius: 20px;
+            padding: 40px 30px;
+            height: 100%;
+        }
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary-gold);
+            margin-left: 20px;
+            margin-top: 3px;
+        }
+
+        /* Luxury Social Icons Layout */
+        .social-links-wrap a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(43, 18, 4, 0.5);
+            border: 1px solid rgba(209, 180, 106, 0.3);
+            color: var(--text-light-gold);
+            border-radius: 50%;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .social-links-wrap a:hover {
+            background: var(--gold-gradient);
+            color: var(--main-espresso);
+            transform: translateY(-5px);
+            border-color: transparent;
+            box-shadow: 0 5px 15px rgba(209, 180, 106, 0.4);
+        }
+        
+        .footer-social-links a {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.3rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .footer-social-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        /* --- Luxury Floating WhatsApp Button --- */
+        .whatsapp-floating-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px; /* Aligned smoothly for Arabic RTL layout balance */
+            z-index: 9999;
+            width: 60px;
+            height: 60px;
+            background: var(--main-espresso);
+            border: 2px solid var(--primary-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .whatsapp-floating-btn i {
+            font-size: 1.9rem;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: transform 0.3s ease;
+        }
+        /* Glowing Luxury Pulse Rings */
+        .whatsapp-floating-btn::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: var(--gold-gradient);
+            opacity: 0.25;
+            z-index: -1;
+            animation: luxuryPulse 2s infinite;
+        }
+        .whatsapp-floating-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            border-color: var(--text-light-gold);
+            background: var(--warm-chestnut);
+            box-shadow: 0 12px 30px rgba(209, 180, 106, 0.3);
+        }
+        .whatsapp-floating-btn:hover i {
+            transform: scale(1.1);
+        }
+        @keyframes luxuryPulse {
+            0% { transform: scale(1); opacity: 0.35; }
+            70% { transform: scale(1.4); opacity: 0; }
+            100% { transform: scale(14); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Luxury Floating WhatsApp Button Structure -->
+    <a href="https://wa.me/966500000000" class="whatsapp-floating-btn" target="_blank" rel="noopener noreferrer" title="تواصل معنا عبر واتساب">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <!-- Centered Sticky Navigation Bar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#home">
+                <svg width="35" height="35" viewBox="0 0 100 100" class="me-2 ms-2">
+                    <path d="M50 15 C30 40 25 55 50 85 C75 55 70 40 50 15 Z" fill="none" stroke="#D1B46A" stroke-width="4"/>
+                    <circle cx="50" cy="52" r="8" fill="#D1B46A"/>
+                </svg>
+                <span>آل درويش</span>
+            </a>
+            
+            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="bi bi-list fs-1" style="color: var(--primary-gold);"></i>
+            </button>
+            
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="#home">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#quiz-section">مستشار العطور</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">عطورنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">قصتنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">طلب شراء</a></li>
+                </ul>
+            </div>
+            <div class="d-none d-lg-block" style="width: 140px;"></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9" data-aos="zoom-in" data-aos-duration="1400">
+                    <h1 class="hero-title">عطور آل درويش</h1>
+                    <p class="fs-4 text-light-gold mb-5 max-width-700 mx-auto fw-light">نفحات عطرية فاخرة تُصاغ بأعلى معايير النقاء لتلائم النخبة وأصحاب الذوق الرفيع.</p>
+                    <a href="#quiz-section" class="btn btn-luxury">اكتشف عطرك المثالي عبر الذكاء العطري</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perfume Dynamic Discovery Quiz Section -->
+    <section id="quiz-section" style="background-color: rgba(0,0,0,0.15);">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">مستشار العطور الافتراضي</h2>
+                <div class="section-divider"></div>
+                <p class="lead text-white-50">أجب عن 3 أسئلة سريعة لنكتشف معاً النوتة العطرية التي تمثل هويتك بدقة</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <div class="quiz-container">
+                        <!-- Step Progress Deck -->
+                        <div class="d-flex justify-content-between mb-3 text-light-gold small">
+                            <span id="quiz-step-indicator">السؤال 1 من 3</span>
+                            <span id="quiz-percent-indicator">33%</span>
+                        </div>
+                        <div class="progress mb-5 bg-dark" style="height: 4px;">
+                            <div id="quiz-progress" class="progress-bar-luxury" style="width: 33%;"></div>
+                        </div>
+
+                        <!-- Question Step 1 -->
+                        <div class="quiz-step active" id="step-1">
+                            <h4 class="text-center text-light-gold mb-4 fs-3">1. ما الأجواء العامة التي تفضلها في عطورك دائماً؟</h4>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="quiz-option-btn" onclick="selectQuizOption('vibe', 'oriental')">
+                                        <i class="bi bi-moon-stars"></i>
+                                        <span class="fw-bold fs-5">الفخامة الشرقية العميقة</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="quiz-option-btn" onclick="selectQuizOption('vibe', 'fresh')">
+                                        <i class="bi bi-wind"></i>
+                                        <span class="fw-bold fs-5">الانتعاش والحيوية الصباحية</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question Step 2 -->
+                        <div class="quiz-step" id="step-2">
+                            <h4 class="text-center text-light-gold mb-4 fs-3">2. أي الروائح الأساسية تنجذب إليها الحواس مباشرة؟</h4>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="quiz-option-btn" onclick="selectQuizOption('base', 'oud')">
+                                        <i class="bi bi-tree"></i>
+                                        <span class="fw-bold">الأخشاب والعود العتيق</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="quiz-option-btn" onclick="selectQuizOption('base', 'musk')">
+                                        <i class="bi bi-gem"></i>
+                                        <span class="fw-bold">المسك الأبيض الناعم</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="quiz-option-btn" onclick="selectQuizOption('base', 'citrus')">
+                                        <i class="bi bi-brightness-high"></i>
+                                        <span class="fw-bold">الحمضيات والأزهار الفواحة</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question Step 3 -->
+                        <div class="quiz-step" id="step-3">
+                            <h4 class="text-center text-light-gold mb-4 fs-3">3. ما هي المناسبة الأساسية التي سترتدي فيها هذا العطر؟</h4>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="quiz-option-btn" onclick="selectQuizOption('occ', 'formal')">
+                                        <i class="bi bi-briefcase"></i>
+                                        <span class="fw-bold fs-5">المناسبات الرسمية والاجتماعات المهمة</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="quiz-option-btn" onclick="selectQuizOption('occ', 'daily')">
+                                        <i class="bi bi-sun"></i>
+                                        <span class="fw-bold fs-5">الاستخدام اليومي والمشاوير الخفيفة</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recommendation Outcome Rendering Box -->
+                        <div class="quiz-step text-center" id="step-result">
+                            <div class="result-box">
+                                <div class="icon-badge mx-auto mb-3"><i class="bi bi-magic"></i></div>
+                                <h3 class="text-light-gold mb-2">العطر المثالي لك هو:</h3>
+                                <h2 id="recommended-title" class="display-6 fw-bold text-white mb-3">—</h2>
+                                <p id="recommended-desc" class="text-white-50 max-width-600 mx-auto mb-4"></p>
+                                <div class="d-flex justify-content-center gap-3">
+                                    <button id="quiz-buy-btn" class="btn btn-luxury">اقتناء العطر فوراً</button>
+                                    <button class="btn btn-outline-light border-secondary px-4 rounded-5" onclick="resetQuiz()">إعادة الاختبار</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">المجموعة الفاخرة</h2>
+                <div class="section-divider"></div>
+                <p class="lead text-white-50">إصدارات خاصة تم ابتكارها من أندر الزيوت العطرية العالمية</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Product 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card">
+                        <div class="product-img-frame">
+                            <i class="bi bi-droplet"></i>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="h4 text-light-gold mb-2" id="prod-title-1">سحر الشرق الأصيل</h3>
+                            <p class="text-white-50 small mb-4">تركيبة غنية من العود الكمبودي النادر ودفء المسك الأبيض.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="fs-4 fw-bold text-white">350 ر.س</span>
+                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('سحر الشرق الأصيل')">اقتناء الآن</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
+                        <div class="product-img-frame">
+                            <i class="bi bi-magic"></i>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="h4 text-light-gold mb-2" id="prod-title-2">الغموض المخملي</h3>
+                            <p class="text-white-50 small mb-4">نوتات غامضة تعتمد على خشب الأرز الفاخر مع لمسة لافندر باردة.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="fs-4 fw-bold text-white">420 ر.س</span>
+                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('الغموض المخملي')">اقتناء الآن</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="col-lg-4 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="product-img-frame">
+                            <i class="bi bi-brightness-high"></i>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="h4 text-light-gold mb-2" id="prod-title-3">النسمة الملكية</h3>
+                            <p class="text-white-50 small mb-4">انتعاش يومي حيوي مستخلص من أزهار الحمضيات والبرغموت الساحر.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="fs-4 fw-bold text-white">290 ر.س</span>
+                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('النسمة الملكية')">اقتناء الآن</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" style="background-color: rgba(0,0,0,0.25); border-top: 1px solid rgba(209, 180, 106, 0.05); border-bottom: 1px solid rgba(209, 180, 106, 0.05);">
+        <div class="container">
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-right">
+                    <h2 class="section-title text-start">فلسفة التميز لدينا</h2>
+                    <div class="section-divider ms-auto me-0"></div>
+                    <p class="lead text-light-gold mb-4">نحن لا نبيع زجاجات عطر، بل نخلد لحظات وذكريات لا تنسى.</p>
+                    <p class="text-white-50 lh-lg">بدأت مسيرة آل درويش من الشغف بجمع أندر المكونات الطبيعية من غابات العود العتيقة وحقول الورد الطائفي والفرنسي النقي، لنصنع لكل عميل هوية عطرية تعبر عن حضوره الفريد والمميز في كل مكان.</p>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="row g-4 h-100">
+                        <div class="col-sm-6">
+                            <div class="mosaic-card">
+                                <div class="icon-badge"><i class="bi bi-award"></i></div>
+                                <h4 class="text-light-gold mb-2">نقاوة مطلقة</h4>
+                                <p class="text-white-50 small mb-0">زيوت عطرية أصلية مستخلصة طبيعياً بدون إضافات كيميائية ضارة.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mosaic-card">
+                                <div class="icon-badge"><i class="bi bi-shield-check"></i></div>
+                                <h4 class="text-light-gold mb-2">ضمان الثبات</h4>
+                                <p class="text-white-50 small mb-0">تركيزات عالية (Eau de Parfum) تضمن لك بقاء العطر طوال اليوم.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Order Purchase Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">طلب الشراء الفوري</h2>
+                <div class="section-divider"></div>
+                <p class="lead text-white-50">املأ بياناتك أدناه لتأكيد طلبك، وسيتم التواصل معك لترتيب الشحن</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Interactive Smart Purchase Form Component -->
+                <div class="col-lg-7" data-aos="fade-right">
+                    <div id="form-container-card" class="bg-dark bg-opacity-25 p-5 rounded-4 border border-secondary border-opacity-10 shadow">
+                        <form id="purchaseForm" onsubmit="handleFormSubmission(event)">
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <label class="form-label text-light-gold fw-semibold">الاسم الكريم</label>
+                                    <input type="text" class="form-control" placeholder="أدخل اسمك الكامل" required>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <label class="form-label text-light-gold fw-semibold">رقم الهاتف</label>
+                                    <input type="tel" class="form-control" placeholder="05xxxxxxxx" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <label class="form-label text-light-gold fw-semibold">العطر المختار</label>
+                                    <select id="form-perfume-select" class="form-select" required>
+                                        <option value="" selected disabled>اختر العطر الفاخر...</option>
+                                        <option value="سحر الشرق الأصيل">سحر الشرق الأصيل</option>
+                                        <option value="الغموض المخملي">الغموض المخملي</option>
+                                        <option value="النسمة الملكية">النسمة الملكية</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <label class="form-label text-light-gold fw-semibold">الحجم المطلوب</label>
+                                    <select id="form-size-select" class="form-select" required>
+                                        <option value="" selected disabled>اختر السعة (مل)...</option>
+                                        <option value="50">٥٠ مل (ثبات يومي)</option>
+                                        <option value="100">١٠٠ مل (حجم ملكي مضاعف)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label text-light-gold fw-semibold">ملاحظات إضافية (اختياري)</label>
+                                <textarea class="form-control" rows="3" placeholder="أي تفاصيل خاصة بالشحن أو التغليف كهدية..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-luxury w-100 py-3 mt-2">تأكيد حجز العطر وإرسال الطلب</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Info Block Component -->
+                <div class="col-lg-5" data-aos="fade-left">
+                    <div class="contact-detail-card d-flex flex-column justify-content-between">
+                        <div>
+                            <h3 class="text-light-gold mb-4 fw-bold">معلومات العناية بالعملاء</h3>
+                            
+                            <div class="contact-item">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <div>
+                                    <h5 class="text-light-gold mb-1">المقر الرئيسي</h5>
+                                    <p class="text-white-50 mb-0 small">شارع العليا العام، الرياض، المملكة العربية السعودية</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <i class="bi bi-telephone-fill"></i>
+                                <div>
+                                    <h5 class="text-light-gold mb-1">الرقم الموحد</h5>
+                                    <p class="text-white-50 mb-0 small" dir="ltr">+966 50 000 0000</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <i class="bi bi-envelope-open-fill"></i>
+                                <div>
+                                    <h5 class="text-light-gold mb-1">الدعم الإلكتروني</h5>
+                                    <p class="text-white-50 mb-0 small">care@aldarwesh.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Integrated Social Media Links Inside Info Deck -->
+                        <div class="pt-4 border-top border-secondary border-opacity-20 mt-4">
+                            <h6 class="text-light-gold mb-3 fw-semibold">تابع منصاتنا الرسمية:</h6>
+                            <div class="social-links-wrap d-flex gap-3">
+                                <a href="https://instagram.com" target="_blank" title="إنستغرام"><i class="bi bi-instagram"></i></a>
+                                <a href="https://x.com" target="_blank" title="إكس (تويتر)"><i class="bi bi-twitter-x"></i></a>
+                                <a href="https://facebook.com" target="_blank" title="فيسبوك"><i class="bi bi-facebook"></i></a>
+                                <a href="https://wa.me/966500000000" target="_blank" title="واتساب"><i class="bi bi-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Component -->
+    <footer class="text-center py-5 bg-black bg-opacity-40 border-top border-secondary border-opacity-10">
+        <div class="container">
+            <div class="footer-social-links mb-3">
+                <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="https://x.com" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+                <a href="https://wa.me/966500000000" target="_blank"><i class="bi bi-whatsapp"></i></a>
+            </div>
+            <p class="mb-0 text-white-50 small">&copy; ٢٠٢٦ عطور آل درويش. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- JS Core Engine Modules -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Init Scroll Animation Library Setup
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        /* --- Interactive Quiz Engine Logic --- */
+        let currentStep = 1;
+        const quizSelections = { vibe: '', base: '', occ: '' };
+
+        function selectQuizOption(key, value) {
+            quizSelections[key] = value;
+            
+            if (currentStep < 3) {
+                document.getElementById(`step-${currentStep}`).classList.remove('active');
+                currentStep++;
+                document.getElementById(`step-${currentStep}`).classList.add('active');
+                
+                // Track & update bar math values
+                const computedWidth = currentStep === 2 ? '66%' : '100%';
+                document.getElementById('quiz-step-indicator').innerText = `السؤال ${currentStep} من ٣`;
+                document.getElementById('quiz-percent-indicator').innerText = computedWidth;
+                document.getElementById('quiz-progress').style.width = computedWidth;
+            } else {
+                evaluateQuizRecommendation();
+            }
+        }
+
+        function evaluateQuizRecommendation() {
+            document.getElementById(`step-${currentStep}`).classList.remove('active');
+            document.getElementById('quiz-step-indicator').innerText = "تم التحليل بنجاح";
+            document.getElementById('quiz-percent-indicator').innerText = "100%";
+            
+            let finalPerfume = '';
+            let finalDesc = '';
+
+            // Simple conditional decision node structures based on client answers
+            if (quizSelections.vibe === 'oriental' || quizSelections.base === 'oud') {
+                finalPerfume = 'سحر الشرق الأصيل';
+                finalDesc = 'بناءً على تفضيلك للفخامة والروائح الشرقية العميقة، فإن هذا المزيج من العود النادر والمسك يمنحك حضوراً ملكياً مهيباً يدوم لفترات طويلة جداً.';
+            } else if (quizSelections.occ === 'formal' || quizSelections.base === 'musk') {
+                finalPerfume = 'الغموض المخملي';
+                finalDesc = 'اختيارك يميل نحو التميز الغامض والهادئ في آن واحد. نوتات خشب الأرز واللافندر البارد ستمنحك هالة جذابة ومثالية للمناسبات واللقاءات الرسمية.';
+            } else {
+                finalPerfume = 'النسمة الملكية';
+                finalDesc = 'أنت تعشق الحيوية والانتعاش الدائم! مستخلص أزهار الحمضيات والبرغموت هو الخيار الأجمل ليعطيك طاقة إيجابية ونسمات خفيفة ساحرة تناسب يومك بالكامل.';
+            }
+
+            document.getElementById('recommended-title').innerText = finalPerfume;
+            document.getElementById('recommended-desc').innerText = finalDesc;
+            
+            // Map the recommendation button to link to our central tracking mechanism
+            document.getElementById('quiz-buy-btn').setAttribute('onclick', `triggerPurchase('${finalPerfume}')`);
+            
+            document.getElementById('step-result').classList.add('active');
+        }
+
+        function resetQuiz() {
+            document.getElementById('step-result').classList.remove('active');
+            currentStep = 1;
+            quizSelections.vibe = '';
+            quizSelections.base = '';
+            quizSelections.occ = '';
+            
+            document.getElementById('quiz-step-indicator').innerText = "السؤال ١ من ٣";
+            document.getElementById('quiz-percent-indicator').innerText = "33%";
+            document.getElementById('quiz-progress').style.width = "33%";
+            document.getElementById('step-1').classList.add('active');
+        }
+
+        /* --- Automated Selection Autofill Engine Mapping --- */
+        function triggerPurchase(perfumeName) {
+            const selectDropdown = document.getElementById('form-perfume-select');
+            const targetContainer = document.getElementById('form-container-card');
+            
+            // Auto fill the targeted value mapping
+            selectDropdown.value = perfumeName;
+            
+            // Clear prior user selection logic for sizing variables to preserve explicit choice parameters
+            document.getElementById('form-size-select').value = "";
+            
+            // Smooth navigate directly into viewport focus parameters
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            
+            // Visual pulse acknowledgment loop feedback trigger
+            targetContainer.classList.remove('highlight-pulse');
+            void targetContainer.offsetWidth; // Force DOM re-flow reset step
+            targetContainer.classList.add('highlight-pulse');
+        }
+
+        function handleFormSubmission(event) {
+            event.preventDefault();
+            const perfume = document.getElementById('form-perfume-select').value;
+            const size = document.getElementById('form-size-select').value;
+            alert(`تم استلام طلبك بنجاح لاقتناء عطر (${perfume}) بحجم ${size} مل! سيقوم ممثل آل درويش بالاتصال بك هاتفياً خلال الساعات القادمة.`);
+            document.getElementById('purchaseForm').reset();
+        }
+
+        /* --- Active Menu Track Event Logic --- */
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= sectionTop - 160) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
