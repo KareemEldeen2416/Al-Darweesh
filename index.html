@@ -211,7 +211,7 @@
             padding: 40px;
         }
 
-        /* Fluid Product Cards Style */
+        /* --- Highly Flexible & Responsive Product Cards --- */
         .product-card {
             background-color: var(--warm-chestnut);
             border: 1px solid rgba(209, 180, 106, 0.15);
@@ -219,28 +219,39 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         .product-card:hover {
             transform: translateY(-12px);
             border-color: var(--primary-gold);
             box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(209, 180, 106, 0.15);
         }
+        /* Fluid Frame Architecture */
         .product-img-frame {
-            height: 300px;
-            background: linear-gradient(180deg, rgba(43,18,4,0.1) 0%, rgba(0,0,0,0.4) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 100%;
+            height: 320px; /* Base container height for desktop view */
+            overflow: hidden;
             position: relative;
+            background-color: rgba(0, 0, 0, 0.2);
         }
-        .product-img-frame i {
-            font-size: 5.5rem;
-            color: var(--primary-gold);
-            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
-            transition: transform 0.6s ease;
+        .product-img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures image aspect ratio remains perfect without stretching */
+            object-position: center;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
-        .product-card:hover .product-img-frame i {
-            transform: scale(1.15) rotate(8deg);
+        .product-card:hover .product-img-frame img {
+            transform: scale(1.08); /* Sophisticated Zoom effect */
+        }
+
+        /* Mobile Optimization adjustments for images */
+        @media (max-width: 768px) {
+            .product-img-frame {
+                height: 260px; /* Slightly lower height for absolute balance on phone viewports */
+            }
         }
 
         /* About Us Geometric Mosaic Concept */
@@ -358,7 +369,7 @@
         .whatsapp-floating-btn {
             position: fixed;
             bottom: 30px;
-            left: 30px; /* Aligned smoothly for Arabic RTL layout balance */
+            left: 30px;
             z-index: 9999;
             width: 60px;
             height: 60px;
@@ -379,7 +390,6 @@
             -webkit-text-fill-color: transparent;
             transition: transform 0.3s ease;
         }
-        /* Glowing Luxury Pulse Rings */
         .whatsapp-floating-btn::before {
             content: '';
             position: absolute;
@@ -403,25 +413,22 @@
         @keyframes luxuryPulse {
             0% { transform: scale(1); opacity: 0.35; }
             70% { transform: scale(1.4); opacity: 0; }
-            100% { transform: scale(14); opacity: 0; }
+            100% { transform: scale(2); opacity: 0; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Luxury Floating WhatsApp Button Structure -->
+    <!-- Luxury Floating WhatsApp Button -->
     <a href="https://wa.me/966500000000" class="whatsapp-floating-btn" target="_blank" rel="noopener noreferrer" title="تواصل معنا عبر واتساب">
         <i class="bi bi-whatsapp"></i>
     </a>
 
-    <!-- Centered Sticky Navigation Bar -->
+    <!-- Sticky Navigation Bar -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#home">
-                <svg width="35" height="35" viewBox="0 0 100 100" class="me-2 ms-2">
-                    <path d="M50 15 C30 40 25 55 50 85 C75 55 70 40 50 15 Z" fill="none" stroke="#D1B46A" stroke-width="4"/>
-                    <circle cx="50" cy="52" r="8" fill="#D1B46A"/>
-                </svg>
+                <img src="darweesh logo.png" style="width: 70px;" alt="">
                 <span>آل درويش</span>
             </a>
             
@@ -455,7 +462,7 @@
         </div>
     </section>
 
-    <!-- Perfume Dynamic Discovery Quiz Section -->
+    <!-- Perfume Discovery Quiz Section -->
     <section id="quiz-section" style="background-color: rgba(0,0,0,0.15);">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
@@ -467,7 +474,6 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8" data-aos="fade-up">
                     <div class="quiz-container">
-                        <!-- Step Progress Deck -->
                         <div class="d-flex justify-content-between mb-3 text-light-gold small">
                             <span id="quiz-step-indicator">السؤال 1 من 3</span>
                             <span id="quiz-percent-indicator">33%</span>
@@ -568,19 +574,21 @@
                 <p class="lead text-white-50">إصدارات خاصة تم ابتكارها من أندر الزيوت العطرية العالمية</p>
             </div>
 
-            <div class="row g-4">
+            <div class="row g-4 match-height">
                 <!-- Product 1 -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="product-card">
                         <div class="product-img-frame">
-                            <i class="bi bi-droplet"></i>
+                            <img src="1.png" alt="سحر الشرق الأصيل">
                         </div>
-                        <div class="p-4 text-center">
-                            <h3 class="h4 text-light-gold mb-2" id="prod-title-1">سحر الشرق الأصيل</h3>
-                            <p class="text-white-50 small mb-4">تركيبة غنية من العود الكمبودي النادر ودفء المسك الأبيض.</p>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="fs-4 fw-bold text-white">350 ر.س</span>
-                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('سحر الشرق الأصيل')">اقتناء الآن</button>
+                        <div class="p-4 text-center d-flex flex-column flex-grow-1 justify-content-between">
+                            <div>
+                                <h3 class="h4 text-light-gold mb-2" id="prod-title-1">Black Sea Lorenzo Pazzaglia</h3>
+                                <p class="text-white-50 small mb-4">تركيبة غنية من نسيم البحر بالإضافة إلى الايلنج و زهر البرتقال.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <span class="fs-4 fw-bold text-white">1000 ج.م</span>
+                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('سحر الشرق الأصيل')">شراء الآن</button>
                             </div>
                         </div>
                     </div>
@@ -589,14 +597,16 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="product-card">
                         <div class="product-img-frame">
-                            <i class="bi bi-magic"></i>
+                            <img src="2.png" alt="الغموض المخملي">
                         </div>
-                        <div class="p-4 text-center">
-                            <h3 class="h4 text-light-gold mb-2" id="prod-title-2">الغموض المخملي</h3>
-                            <p class="text-white-50 small mb-4">نوتات غامضة تعتمد على خشب الأرز الفاخر مع لمسة لافندر باردة.</p>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="fs-4 fw-bold text-white">420 ر.س</span>
-                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('الغموض المخملي')">اقتناء الآن</button>
+                        <div class="p-4 text-center d-flex flex-column flex-grow-1 justify-content-between">
+                            <div>
+                                <h3 class="h4 text-light-gold mb-2" id="prod-title-2">Mandarino De Amalfi</h3>
+                                <p class="text-white-50 small mb-4">خليط ساحر من زيوت أوراق الليمون والميرمية والريحان بالإضافة إلى سحر الياسمين</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <span class="fs-4 fw-bold text-white">1200  ج.م</span>
+                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('الغموض المخملي')">شراء الآن</button>
                             </div>
                         </div>
                     </div>
@@ -605,14 +615,70 @@
                 <div class="col-lg-4 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="300">
                     <div class="product-card">
                         <div class="product-img-frame">
-                            <i class="bi bi-brightness-high"></i>
+                            <img src="3.png" alt="النسمة الملكية">
                         </div>
-                        <div class="p-4 text-center">
-                            <h3 class="h4 text-light-gold mb-2" id="prod-title-3">النسمة الملكية</h3>
-                            <p class="text-white-50 small mb-4">انتعاش يومي حيوي مستخلص من أزهار الحمضيات والبرغموت الساحر.</p>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="fs-4 fw-bold text-white">290 ر.س</span>
-                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('النسمة الملكية')">اقتناء الآن</button>
+                        <div class="p-4 text-center d-flex flex-column flex-grow-1 justify-content-between">
+                            <div>
+                                <h3 class="h4 text-light-gold mb-2" id="prod-title-3">Madawi Arabian White Oud</h3>
+                                <p class="text-white-50 small mb-4">انتعاش يومي حيوي مستخلص من زنابق الوادي وجوز الهند مع المسك والامبرغريس</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <span class="fs-4 fw-bold text-white">1100 ج.م</span>
+                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('النسمة الملكية')">شراء الآن</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="col-lg-4 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="product-img-frame">
+                            <img src="4.png" alt="النسمة الملكية">
+                        </div>
+                        <div class="p-4 text-center d-flex flex-column flex-grow-1 justify-content-between">
+                            <div>
+                                <h3 class="h4 text-light-gold mb-2" id="prod-title-4">Tilla Marc-Antoine Barrios</h3>
+                                <p class="text-white-50 small mb-4">تركيبة فريدة مستخلصة من زهر البرتقال مع الهيلوتروب بالإضافة إلى نجيل الهند</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <span class="fs-4 fw-bold text-white">1400 ج.م</span>
+                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('النسمة الملكية')">شراء الآن</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 5 -->
+                <div class="col-lg-4 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="product-img-frame">
+                            <img src="5.png" alt="النسمة الملكية">
+                        </div>
+                        <div class="p-4 text-center d-flex flex-column flex-grow-1 justify-content-between">
+                            <div>
+                                <h3 class="h4 text-light-gold mb-2" id="prod-title-5">Taraf Arabian Oud</h3>
+                                <p class="text-white-50 small mb-4">مزيج الورد البلغاري و إكليل الجبل</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <span class="fs-4 fw-bold text-white">1150 ج.م</span>
+                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('النسمة الملكية')">شراء الآن</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 6 -->
+                <div class="col-lg-4 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="product-img-frame">
+                            <img src="6.png" alt="النسمة الملكية">
+                        </div>
+                        <div class="p-4 text-center d-flex flex-column flex-grow-1 justify-content-between">
+                            <div>
+                                <h3 class="h4 text-light-gold mb-2" id="prod-title-6">Torino21 Xerjoff</h3>
+                                <p class="text-white-50 small mb-4">إنتعاش من الكمشيش الأسود المخلوط  مع الخزامي وإكليل الجبل مضاف إليه عبق الياسمين</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                <span class="fs-4 fw-bold text-white">1500 ج.م</span>
+                                <button class="btn btn-luxury py-2 px-4 fs-6" onclick="triggerPurchase('النسمة الملكية')">شراء الآن</button>
                             </div>
                         </div>
                     </div>
@@ -663,7 +729,7 @@
             </div>
 
             <div class="row g-4">
-                <!-- Interactive Smart Purchase Form Component -->
+                <!-- Purchase Form Component -->
                 <div class="col-lg-7" data-aos="fade-right">
                     <div id="form-container-card" class="bg-dark bg-opacity-25 p-5 rounded-4 border border-secondary border-opacity-10 shadow">
                         <form id="purchaseForm" onsubmit="handleFormSubmission(event)">
@@ -714,8 +780,16 @@
                             <div class="contact-item">
                                 <i class="bi bi-geo-alt-fill"></i>
                                 <div>
-                                    <h5 class="text-light-gold mb-1">المقر الرئيسي</h5>
-                                    <p class="text-white-50 mb-0 small">شارع العليا العام، الرياض، المملكة العربية السعودية</p>
+                                    <h5 class="text-light-gold mb-1">الفرع الأول</h5>
+                                    <p class="text-white-50 mb-0 small">شارع الجلاء - بجانب الخديوي</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <div>
+                                    <h5 class="text-light-gold mb-1">الفرع الثاني</h5>
+                                    <p class="text-white-50 mb-0 small">شارع باريس - بجانب TREFEL Cafe</p>
                                 </div>
                             </div>
 
@@ -723,27 +797,27 @@
                                 <i class="bi bi-telephone-fill"></i>
                                 <div>
                                     <h5 class="text-light-gold mb-1">الرقم الموحد</h5>
-                                    <p class="text-white-50 mb-0 small" dir="ltr">+966 50 000 0000</p>
+                                    <p class="text-white-50 mb-0 small" dir="ltr">+2010 37023405</p>
                                 </div>
                             </div>
-
+<!-- 
                             <div class="contact-item">
                                 <i class="bi bi-envelope-open-fill"></i>
                                 <div>
                                     <h5 class="text-light-gold mb-1">الدعم الإلكتروني</h5>
                                     <p class="text-white-50 mb-0 small">care@aldarwesh.com</p>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
 
                         <!-- Integrated Social Media Links Inside Info Deck -->
                         <div class="pt-4 border-top border-secondary border-opacity-20 mt-4">
                             <h6 class="text-light-gold mb-3 fw-semibold">تابع منصاتنا الرسمية:</h6>
                             <div class="social-links-wrap d-flex gap-3">
-                                <a href="https://instagram.com" target="_blank" title="إنستغرام"><i class="bi bi-instagram"></i></a>
-                                <a href="https://x.com" target="_blank" title="إكس (تويتر)"><i class="bi bi-twitter-x"></i></a>
-                                <a href="https://facebook.com" target="_blank" title="فيسبوك"><i class="bi bi-facebook"></i></a>
-                                <a href="https://wa.me/966500000000" target="_blank" title="واتساب"><i class="bi bi-whatsapp"></i></a>
+                                <a href="https://www.instagram.com/al_darwesh5" target="_blank" title="إنستغرام"><i class="bi bi-instagram"></i></a>
+                                <!-- <a href="https://x.com" target="_blank" title="إكس (تويتر)"><i class="bi bi-twitter-x"></i></a> -->
+                                <a href="https://www.facebook.com/AlDrwysh5" target="_blank" title="فيسبوك"><i class="bi bi-facebook"></i></a>
+                                <a href="https://wa.me/+20 10 37023405" target="_blank" title="واتساب"><i class="bi bi-whatsapp"></i></a>
                             </div>
                         </div>
                     </div>
@@ -755,12 +829,6 @@
     <!-- Footer Component -->
     <footer class="text-center py-5 bg-black bg-opacity-40 border-top border-secondary border-opacity-10">
         <div class="container">
-            <div class="footer-social-links mb-3">
-                <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
-                <a href="https://x.com" target="_blank"><i class="bi bi-twitter-x"></i></a>
-                <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
-                <a href="https://wa.me/966500000000" target="_blank"><i class="bi bi-whatsapp"></i></a>
-            </div>
             <p class="mb-0 text-white-50 small">&copy; ٢٠٢٦ عطور آل درويش. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
@@ -788,7 +856,6 @@
                 currentStep++;
                 document.getElementById(`step-${currentStep}`).classList.add('active');
                 
-                // Track & update bar math values
                 const computedWidth = currentStep === 2 ? '66%' : '100%';
                 document.getElementById('quiz-step-indicator').innerText = `السؤال ${currentStep} من ٣`;
                 document.getElementById('quiz-percent-indicator').innerText = computedWidth;
@@ -806,13 +873,12 @@
             let finalPerfume = '';
             let finalDesc = '';
 
-            // Simple conditional decision node structures based on client answers
             if (quizSelections.vibe === 'oriental' || quizSelections.base === 'oud') {
                 finalPerfume = 'سحر الشرق الأصيل';
                 finalDesc = 'بناءً على تفضيلك للفخامة والروائح الشرقية العميقة، فإن هذا المزيج من العود النادر والمسك يمنحك حضوراً ملكياً مهيباً يدوم لفترات طويلة جداً.';
             } else if (quizSelections.occ === 'formal' || quizSelections.base === 'musk') {
                 finalPerfume = 'الغموض المخملي';
-                finalDesc = 'اختيارك يميل نحو التميز الغامض والهادئ في آن واحد. نوتات خشب الأرز واللافندر البارد ستمنحك هالة جذابة ومثالية للمناسبات واللقاءات الرسمية.';
+                finalDesc = 'اختيارك يميل نحو التميز الغامض والهادئ in آن واحد. نوتات خشب الأرز واللافندر البارد ستمنحك هالة جذابة ومثالية للمناسبات واللقاءات الرسمية.';
             } else {
                 finalPerfume = 'النسمة الملكية';
                 finalDesc = 'أنت تعشق الحيوية والانتعاش الدائم! مستخلص أزهار الحمضيات والبرغموت هو الخيار الأجمل ليعطيك طاقة إيجابية ونسمات خفيفة ساحرة تناسب يومك بالكامل.';
@@ -821,7 +887,6 @@
             document.getElementById('recommended-title').innerText = finalPerfume;
             document.getElementById('recommended-desc').innerText = finalDesc;
             
-            // Map the recommendation button to link to our central tracking mechanism
             document.getElementById('quiz-buy-btn').setAttribute('onclick', `triggerPurchase('${finalPerfume}')`);
             
             document.getElementById('step-result').classList.add('active');
@@ -845,18 +910,13 @@
             const selectDropdown = document.getElementById('form-perfume-select');
             const targetContainer = document.getElementById('form-container-card');
             
-            // Auto fill the targeted value mapping
             selectDropdown.value = perfumeName;
-            
-            // Clear prior user selection logic for sizing variables to preserve explicit choice parameters
             document.getElementById('form-size-select').value = "";
             
-            // Smooth navigate directly into viewport focus parameters
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
             
-            // Visual pulse acknowledgment loop feedback trigger
             targetContainer.classList.remove('highlight-pulse');
-            void targetContainer.offsetWidth; // Force DOM re-flow reset step
+            void targetContainer.offsetWidth; // Force DOM re-flow reset
             targetContainer.classList.add('highlight-pulse');
         }
 
